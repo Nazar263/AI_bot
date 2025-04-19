@@ -73,7 +73,7 @@ let plus;
 let flah = false;
 let flah2= false;
 function lendh_en() {
-  flah=true;
+  
  second=0;
  
 const english = [
@@ -190,7 +190,7 @@ message_1(en)
 
 }
 function lendh_uk() {
-  flah=true;
+
  second=0;
  
 const ukraine = ["Сьогодні зранку на небі з’явилися темні хмари",
@@ -338,21 +338,7 @@ document.getElementById("container").appendChild(message);
 
 if (String(pole.value.trim().toLowerCase())==="поточний час!") {
  message_1(time)
-} else if (String(pole.value.trim().toLowerCase())==="тренування з письма на клавіатурі!") { flah=true;
-  message_1("<h1 class='h1_js'>Виберіть мову...😉👇</h1>  <button class='button_js' onclick='window1()'>Українська!</button> <button class='button_js' onclick='window2()'>English!</button>")
-}
-else  if ( flah && String(pole.value.trim())===uk || String(pole.value.trim())===en) {
-  message_1("Вітаю...🎉😉<br> Ваше речення повністю вірне, час за який було написано: " + second + " секунд <button class='button_js_again' onclick='copy1()'>Спробувати ще раз!</button>")
-  
-clearInterval(plus);
- 
-
-}else if ( flah && String(pole.value.trim())!==uk && String(pole.value.trim())!==en) {
-  message_1("Вибачте, та ваше речення має помилки...😐 час за який було написано: " + second + " секунд <button class='button_js_again' onclick='copy1()'>Спробувати ще раз!</button>")
-clearInterval(plus);
- 
-}
-
+} 
 else if ( String(pole.value.trim().toLowerCase())==="створити нотатки!") {
   
   flah2=true;
@@ -372,6 +358,20 @@ let notes = JSON.parse(localStorage.getItem("notes")) || [];
    notes.push(pole.value.trim());
    localStorage.setItem("notes", JSON.stringify(notes));
   message_1("AI_bot:<br>Збереженно...😉")
+}
+else if (String(pole.value.trim().toLowerCase())==="тренування з письма на клавіатурі!") { flah=true;
+  message_1("<h1 class='h1_js'>Виберіть мову...😉👇</h1>  <button class='button_js' onclick='window1()'>Українська!</button> <button class='button_js' onclick='window2()'>English!</button>")
+}
+else  if ( flah && String(pole.value.trim())===uk || String(pole.value.trim())===en) {
+  message_1("Вітаю...🎉😉<br> Ваше речення повністю вірне, час за який було написано: " + second + " секунд <button class='button_js_again' onclick='copy1()'>Спробувати ще раз!</button>")
+  
+clearInterval(plus);
+ 
+
+}else if ( flah && String(pole.value.trim())!==uk && String(pole.value.trim())!==en) {
+  message_1("Вибачте, та ваше речення має помилки...😐 час за який було написано: " + second + " секунд <button class='button_js_again' onclick='copy1()'>Спробувати ще раз!</button>")
+clearInterval(plus);
+ 
 }else {
 message_1(" AI_bot:<br>Не правильна команда... 🤷")
 setTimeout(()=>{
