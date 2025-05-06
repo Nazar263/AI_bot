@@ -66,3 +66,11 @@ bot.style.padding="10px";
   },1000)
  
 }
+
+self.addEventListener('install', (event) => {
+  console.log('Service Worker встановлено');
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(fetch(event.request));
+});
