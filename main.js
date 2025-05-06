@@ -67,10 +67,8 @@ bot.style.padding="10px";
  
 }
 
-self.addEventListener('install', (event) => {
-  console.log('Service Worker встановлено');
-});
-
-self.addEventListener('fetch', (event) => {
-  event.respondWith(fetch(event.request));
-});
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(() => console.log('Service Worker registered'))
+    .catch((err) => console.error('Service Worker error:', err));
+}
