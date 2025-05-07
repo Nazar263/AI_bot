@@ -1,6 +1,6 @@
 {
   "name": "AI_Bot",
-  "short_name": "AI",
+  "short_name": "AI_Bot",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": " #054E8F",
